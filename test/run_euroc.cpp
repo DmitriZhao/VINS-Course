@@ -7,9 +7,8 @@
 #include <thread>
 #include <iomanip>
 
-#include <cv.h>
 #include <opencv2/opencv.hpp>
-#include <highgui.h>
+#include <opencv2/highgui/highgui.hpp>
 #include <eigen3/Eigen/Dense>
 #include "System.h"
 
@@ -125,7 +124,7 @@ void DrawIMGandGLinMainThrd(){
 		}
 		//pSystem->PubImageData(dStampNSec / 1e9, img);
 		cv::Mat show_img;
-		cv::cvtColor(img, show_img, CV_GRAY2RGB);
+		cv::cvtColor(img, show_img, cv::COLOR_GRAY2RGB);
 		if (SHOW_TRACK)
 		{
 			for (unsigned int j = 0; j < pSystem->trackerData[0].cur_pts.size(); j++)
